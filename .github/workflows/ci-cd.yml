@@ -14,7 +14,7 @@ jobs:
             - name: lister les fichiers
               run: ls -la
             - name: setup python
-              uses: action/setup-python@v7
+              uses: actions/setup-python@v7
               with:
                 version: '3.10.8'
             - name: version python
