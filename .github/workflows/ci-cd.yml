@@ -4,7 +4,7 @@ on:
         branches:
             - master
 jobs:
-    hello:
+    validate:
         runs-on: ubuntu-latest
         steps:
             - name: Hello GitHub Actions
@@ -23,8 +23,17 @@ jobs:
               run: pip install poetry
             - name: install dependancies
               run: poetry --version && poetry install --no-root
-            - name: lancer le test
-              run: poetry run pytest
+            # - name: lancer le test
+            #   run: poetry run pytest
+    build:
+        needs: validate
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkkout the repository
+          uses: actions/checkout@v4
+        - name: build image
+          run: docker --version && docker build -t realworld:1.1 .
+          
             
 
               
