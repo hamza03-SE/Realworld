@@ -19,10 +19,12 @@ jobs:
                 version: '3.10.8'
             - name: version python
               run: python --version
-            - name: Install dependencies
-              run: pip install -r requirements.txt
-            - name: Run unit test
-              run: pytest
+            - name: Install poetry
+              run: pip install poetry
+            - name: install dependancies
+              run: poetry --version && poetry install
+            - name: lancer le test
+              run: poetry run pytest
             
 
               
