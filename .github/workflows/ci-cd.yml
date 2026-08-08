@@ -1,0 +1,11 @@
+name: Pipeline CI CD pour worldreal
+on:
+    push:
+        branches:
+            - master
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello GitHub Actions
+              run: echo "Hello from Github Actions!"
