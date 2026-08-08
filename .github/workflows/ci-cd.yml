@@ -42,10 +42,11 @@ jobs:
             password: ${{ secrets.GITHUB_TOKEN }}
 
         - name: build image
-          run: docker --version && docker build -t ghcr.io/${{ github.repository }}:latest .
-
+          run: docker --version && docker build -t ghcr.io/hamza03-se/realworld:latest .
+        - name: tag image
+          run: docker tag realworld:latest ghcr.io/hamza03-se/realworld:latest
         - name: push image
-          run: docker push ghcr.io/${{ github.repository }}:latest
+          run: docker push ghcr.io/hamza03-se/realworld:latest
     
 
             
