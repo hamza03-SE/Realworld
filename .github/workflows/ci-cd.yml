@@ -42,7 +42,7 @@ jobs:
             password: ${{ secrets.GITHUB_TOKEN }}
 
         - name: build image
-          run: docker --version && docker build -t ghcr.io/hamza03-se/realworld:latest .
+          run: docker --version && docker build -t realworld:latest .
         - name: tag image
           run: docker tag realworld:latest ghcr.io/hamza03-se/realworld:latest
         - name: push image
