@@ -22,7 +22,7 @@ jobs:
             - name: Install poetry
               run: pip install poetry
             - name: install dependancies
-              run: poetry --version && poetry install
+              run: poetry --version && poetry install --no-root
             - name: lancer le test
               run: poetry run pytest
             
