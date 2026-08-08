@@ -16,7 +16,7 @@ jobs:
             - name: setup python
               uses: actions/setup-python@v7
               with:
-                version: '3.9'
+                python-version: '3.9'
             - name: version python
               run: python --version
             - name: Install poetry
