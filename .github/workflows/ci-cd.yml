@@ -9,3 +9,9 @@ jobs:
         steps:
             - name: Hello GitHub Actions
               run: echo "Hello from Github Actions!"
+            - name: Recuperer le code source
+              uses: actions/checkout@v4
+            - name: lister les fichiers
+              run: ls -la
+
+              
