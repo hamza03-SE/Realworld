@@ -61,6 +61,15 @@ jobs:
         needs: build_and_push
         runs-on: ubuntu-latest
         environment: production
+        steps: 
+            - name: Test SSH connection to EC2 
+              run: |
+                mkdir -p ~/.ssh 
+                echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/github-actions-realworld 
+                chmod 600 ~/.ssh/github-actions-realworld 
+                ssh -o StrictHostKeyChecking=no -i ~/.ssh/github-actions-realworld ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
+                "echo 'Hello from GitHub Actions'; hostname; docker ps"
+
     
 
             
