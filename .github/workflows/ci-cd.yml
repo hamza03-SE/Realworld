@@ -55,7 +55,7 @@ jobs:
         # - name: tag image
         #   run: docker tag ghcr.io/${{ github.repository }}:1.1 ghcr.io/${{ github.actor }}/${{ github.repository }}:1.1
         - name: push image
-          run: docker push "${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}""
+          run: docker push "${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}"
     
 
             
