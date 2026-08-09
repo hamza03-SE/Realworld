@@ -68,7 +68,9 @@ jobs:
                 echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/github-actions-realworld 
                 chmod 600 ~/.ssh/github-actions-realworld 
                 ssh -o StrictHostKeyChecking=no -i ~/.ssh/github-actions-realworld ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
-                "echo 'Hello from GitHub Actions'; hostname; docker ps"
+                echo 'Hello from GitHub Actions'
+                hostname 
+                docker ps
 
     
 
